@@ -33,7 +33,7 @@ const user = {
             return state.userID ||localStorage.getItem('UID')
         },
         getToken(state){
-            return state.userID ||localStorage.getItem('token')
+            return state.token ||localStorage.getItem('token')
         }
     },
     actions:{

@@ -4,6 +4,7 @@ const http = axios.create({
     baseURL:"http://localhost/",
     withCredentials:true,
     headers:{token:localStorage.getItem("token")},
+    timeout:3000
 })
 //增加拦截器 解决token不刷新的问题
 http.interceptors.request.use(

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Main from "@/view/Main.vue";
 import ManageIndex from "@/view/manage/Index.vue";
 import IllustTableView from "@/view/manage/illust/TableView";
+import Upload from '../view/manage/illust/Upload.vue'
 import Login from "@/view/manage/Login";
 import store from "@/store/index";
 import {checkToken} from '@/api/codeApi'
@@ -27,10 +28,11 @@ const router = new VueRouter({
       children: [
         { path: "", component: ManageIndex },
         {
-          path: "IllustTableView",
+          path: "illustTableView",
           name: "IllustTableView",
           component: IllustTableView,
         },
+        { path: "upload", name:'Upload',component: Upload },
       ],
     },
     { path: "/login", component: Login, name: "Login" },
@@ -52,6 +54,8 @@ router.beforeEach((to, from, next) => {
           if (res.data.data) {
             next();
           }else next({ path: "/login" });
+        }).catch((erro)=>{
+          next({ path: "/login" });
         })
       }else next({ path: "/login" });
     }

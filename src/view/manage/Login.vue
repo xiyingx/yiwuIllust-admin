@@ -72,14 +72,14 @@ export default {
         line-height: 70px;
         text-align: center;
     }
-    .el-form-item /deep/ .el-input__inner{
+    .el-form-item ::v-deep .el-input__inner{
         border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     color: #fff;
     height: 52px;
     }   
-    .el-form-item /deep/ .el-form-item__label{
+    .el-form-item ::v-deep .el-form-item__label{
         color: #fff;
     }
     .login-form{

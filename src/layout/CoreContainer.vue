@@ -19,13 +19,13 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">视图</template>
-                            <el-menu-item index="/main/IllustTableView">表格</el-menu-item>
-                            <el-menu-item index="1-2">大图</el-menu-item>
+                            <el-menu-item index="/main/illustTableView">表格</el-menu-item>
+                            <el-menu-item index="/main/illustPicView">大图</el-menu-item>
                         </el-menu-item-group>
 
                         <el-menu-item-group>
                             <template slot="title">操作</template>
-                            <el-menu-item index="1-1">添加</el-menu-item>
+                            <el-menu-item index="/main/upload">添加</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
