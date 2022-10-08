@@ -3,10 +3,14 @@ import VueRouter from "vue-router";
 import Main from "@/view/Main.vue";
 import ManageIndex from "@/view/manage/Index.vue";
 import IllustTableView from "@/view/manage/illust/TableView";
+import IllustPicView from "@/view/manage/illust/PicView"
 import Upload from '../view/manage/illust/Upload.vue'
+import UserTableView from "@/view/manage/user/TableView"
+import AddUser from '@/view/manage/user/AddUser'
 import Login from "@/view/manage/Login";
 import store from "@/store/index";
 import {checkToken} from '@/api/codeApi'
+
 //关闭重复点击路由的警告信息
 
 // const originalPush = VueRouter.prototype.push
@@ -21,7 +25,7 @@ const router = new VueRouter({
   //路由规则
   routes: [
     { path: "/", redirect: "/main" },
-    // // 注意不要给子路由加 /
+    // ! 注意不要给子路由加 "/"
     {
       path: "/main",
       component: Main,
@@ -32,7 +36,10 @@ const router = new VueRouter({
           name: "IllustTableView",
           component: IllustTableView,
         },
+        { path: "illustPicView", name:'IllustPicView',component: IllustPicView },
         { path: "upload", name:'Upload',component: Upload },
+        { path: "userTableView", name:'UserTableView',component: UserTableView },
+        { path: "addUser", name:'addUser',component: AddUser },
       ],
     },
     { path: "/login", component: Login, name: "Login" },

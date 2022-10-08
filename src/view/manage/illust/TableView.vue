@@ -62,7 +62,7 @@
 import EditWind from '@/components/EditWind.vue'
 import { getIllustByPage, updateIllust, delIllust, delIllustMulti } from '@/api/illustApi'
 export default {
-    name: 'Index',
+    name: 'TableView',
     components: {
         EditWind
     },
@@ -91,21 +91,21 @@ export default {
     },
     methods: {
         handleSizeChange(val) {
-            console.log(`每页 ${val} 条`);
+            console.log(`每页 ${val} 条`)
             this.page.size = val
             this.get()
-            console.log(this.page.size);
+            console.log(this.page.size)
         },
         handleCurrentChange(val) {
             this.page.currentPage = val
             this.get()
-            console.log(`当前页: ${val}`);
+            console.log(`当前页: ${val}`)
         },
         async handleSelectionChange(val) {
             this.multipleSelection = val;
             this.multipleSelection = this.multipleSelection.map(obj => { return obj.id })
-            console.log(this.multipleSelection);
-            console.log(val);
+            console.log(this.multipleSelection)
+            console.log(val)
         },
         async get() {
             const { data: res } = await getIllustByPage(this.page.currentPage, this.page.size);

@@ -34,8 +34,8 @@
                             <i class="el-icon-user"></i>
                             <span>用户管理</span>
                         </template>
-                            <el-menu-item index="1-1">全部用户</el-menu-item>
-                            <el-menu-item index="1-2">添加用户</el-menu-item>
+                            <el-menu-item index="/main/userTableView">全部用户</el-menu-item>
+                            <el-menu-item index="/main/addUser">添加用户</el-menu-item>
                             <el-menu-item index="1-2">用户收藏夹</el-menu-item>
                     </el-submenu>
 
@@ -56,7 +56,7 @@
                         <el-breadcrumb-item>活动详情</el-breadcrumb-item>
                     </el-breadcrumb>
                 </el-header>
-                <el-main>
+                <el-main id="content">
                     <!-- 内容区 -->
                     <slot>
 
@@ -124,7 +124,7 @@ export default {
 
 .el-menu {
     height: 100%;
-    overflow-y: auto;
+    
 }
 
 .el-main {}
